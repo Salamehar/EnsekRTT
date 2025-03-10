@@ -52,6 +52,7 @@ dist/
 .env.development.local
 .env.test.local
 .env.production.local
+**/appsettings.Development.json
 
 # Logs
 logs/
