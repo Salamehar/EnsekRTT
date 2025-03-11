@@ -7,7 +7,6 @@ using MeterReadings.Core.Validators;
 using MeterReadings.Data.Context;
 using MeterReadings.Data.Repositories;
 using MeterReadings.Data.Extensions;
-using MeterReadings.Data.Seed;
 using MeterReadings.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -43,7 +42,6 @@ builder.Services.AddDbContext<MeterReadingDbContext>(options =>
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IMeterReadingRepository, MeterReadingRepository>();
-builder.Services.AddScoped<Seeder>();
 
 builder.Services.AddScoped<ICsvParserService, CsvParserService>();
 builder.Services.AddScoped<IMeterReadingService, MeterReadingService>();

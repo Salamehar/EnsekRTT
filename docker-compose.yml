@@ -17,6 +17,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - meter_network
 
   api:
     build:
@@ -25,12 +27,8 @@ services:
     container_name: meter-readings-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://[::]:80     
-      - DB_HOST=${DB_HOST:-postgres}
-      - DB_PORT=${DB_PORT:-5432}
-      - DB_NAME=${DB_NAME:-MeterReadings}
-      - DB_USER=${DB_USER:-postgres}
-      - DB_PASSWORD=${DB_PASSWORD:-postgres}
+      - ASPNETCORE_URLS=http://[::]:80
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=MeterReadings;Username=postgres;Password=postgres
     ports:
       - "${API_PORT:-8000}:80"
     volumes:
@@ -38,6 +36,12 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    networks:
+      - meter_network
 
 volumes:
   postgres_data:
+
+networks:
+  meter_network:
+    driver: bridge

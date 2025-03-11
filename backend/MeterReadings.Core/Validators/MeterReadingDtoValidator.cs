@@ -1,6 +1,7 @@
 using FluentValidation;
 using MeterReadings.Core.DTOs;
 using MeterReadings.Core.Interfaces.Repositories;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace MeterReadings.Core.Validators;
@@ -41,7 +42,12 @@ public class MeterReadingDtoValidator : AbstractValidator<MeterReadingDto>
 
     private async Task<bool> ReadingNotDuplicate(MeterReadingDto reading, CancellationToken cancellationToken)
     {
-        if (!DateTime.TryParse(reading.MeterReadingDateTime, out var readingDateTime))
+        if (!DateTime.TryParseExact(
+              reading.MeterReadingDateTime,
+              "dd/MM/yyyy HH:mm",
+              CultureInfo.InvariantCulture,
+              DateTimeStyles.None,
+              out var readingDateTime))
         {
             return false;
         }
@@ -54,7 +60,12 @@ public class MeterReadingDtoValidator : AbstractValidator<MeterReadingDto>
 
     private async Task<bool> ReadingNotOlderThanExisting(MeterReadingDto reading, CancellationToken cancellationToken)
     {
-        if (!DateTime.TryParse(reading.MeterReadingDateTime, out var readingDateTime))
+        if (!DateTime.TryParseExact(
+              reading.MeterReadingDateTime,
+              "dd/MM/yyyy HH:mm",
+              CultureInfo.InvariantCulture,
+              DateTimeStyles.None,
+              out var readingDateTime))
         {
             return false;
         }

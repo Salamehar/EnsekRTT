@@ -22,4 +22,9 @@
     <ProjectReference Include="..\MeterReadings.Core\MeterReadings.Core.csproj" />
   </ItemGroup>
 
+<ItemGroup>
+  <None Update="Data\Test_Accounts.csv">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
 </Project>
