@@ -33,13 +33,6 @@ project.assets.json
 *.cache
 *.csproj.user
 
-# Docker
-**/docker-compose.override.yml
-**/docker-compose.*.yml
-**/docker-compose.override.yml
-.dockerignore
-Dockerfile*
-
 # React / Frontend
 node_modules/
 build/
@@ -52,7 +45,6 @@ dist/
 .env.development.local
 .env.test.local
 .env.production.local
-**/appsettings.Development.json
 
 # Logs
 logs/
