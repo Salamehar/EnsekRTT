@@ -11,6 +11,10 @@ using MeterReadings.Data.Seed;
 using MeterReadings.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
+// Configure Npgsql to handle DateTime conversions globally before any DbContext is initialized
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
