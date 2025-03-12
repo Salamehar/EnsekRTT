@@ -39,6 +39,18 @@ services:
     networks:
       - meter_network
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: meter-readings-frontend
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    depends_on:
+      - api
+    networks:
+      - meter_network
+      
 volumes:
   postgres_data:
 
