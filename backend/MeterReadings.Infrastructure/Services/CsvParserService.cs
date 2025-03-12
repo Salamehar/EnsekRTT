@@ -1,7 +1,7 @@
+using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using MeterReadings.Core.Interfaces.Services;
-using System.Globalization;
 
 namespace MeterReadings.Infrastructure.Services;
 

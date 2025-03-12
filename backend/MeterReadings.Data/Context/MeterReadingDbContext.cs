@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using MeterReadings.Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeterReadings.Data.Context;
 

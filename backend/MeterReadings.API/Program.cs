@@ -5,8 +5,8 @@ using MeterReadings.Core.Interfaces.Repositories;
 using MeterReadings.Core.Interfaces.Services;
 using MeterReadings.Core.Validators;
 using MeterReadings.Data.Context;
-using MeterReadings.Data.Repositories;
 using MeterReadings.Data.Extensions;
+using MeterReadings.Data.Repositories;
 using MeterReadings.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 

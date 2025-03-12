@@ -1,10 +1,10 @@
+using System.Globalization;
+using CsvHelper;
+using MeterReadings.Core.Models;
+using MeterReadings.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using MeterReadings.Core.Models;
-using MeterReadings.Data.Context;
-using CsvHelper;
-using System.Globalization;
 
 namespace MeterReadings.Data.Extensions;
 

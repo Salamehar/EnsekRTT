@@ -1,4 +1,4 @@
-.PHONY: pre-commit dev build migration db.update db.reset db.seed
+.PHONY: pre-commit dev build migration db.update db.reset db.seed test
 
 dev:
 	docker compose up --build
@@ -25,3 +25,6 @@ db.reset:
 
 db.seed:
 	cd backend && dotnet run --project MeterReadings.API/MeterReadings.API.csproj seed
+
+test:
+	cd backend && dotnet test

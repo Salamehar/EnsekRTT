@@ -1,7 +1,7 @@
-using Microsoft.EntityFrameworkCore;
 using MeterReadings.Core.Interfaces.Repositories;
 using MeterReadings.Core.Models;
 using MeterReadings.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeterReadings.Data.Repositories;
 

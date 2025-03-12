@@ -1,8 +1,7 @@
+using System.Globalization;
 using FluentValidation;
 using MeterReadings.Core.DTOs;
 using MeterReadings.Core.Interfaces.Repositories;
-using System.Globalization;
-using System.Text.RegularExpressions;
 
 namespace MeterReadings.Core.Validators;
 
