@@ -1,7 +1,7 @@
 .PHONY: pre-commit dev build migration db.update db.reset db.seed test
 
 dev:
-	docker compose up --build
+	docker compose up
 
 build:
 	docker compose build --no-cache
